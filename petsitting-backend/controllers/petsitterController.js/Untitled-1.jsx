@@ -1,0 +1,62 @@
+
+
+const Petsitter = require('../models/Petsitter'); 
+
+//Criar um novo cadastro de Petsitter
+
+exports.createPetsitter = async (req, res) => {
+    try {
+        const petsitter = new Petsitter(req.body);
+        await petsitter.save();
+        res.status(201).json({ message: 'Petsitter criado com sucesso!', petsitter });
+    } catch (error) {
+        res.status(400).json({ message: 'Erro ao criar Petsitter', error });
+    }
+};
+
+//Listar os Petsitters cadastrados
+
+exports.getPetsitters = async (req, res) => {
+    try {
+        const petsitters = await Petsitter.find();
+        res.status(200).json(petsitters);
+    } catch (error) {
+        res.status(400).json({ message: 'Erro ao listar Petsitters', error });
+    }
+};
+
+//Acessar um cadastro de Petsitter pelo ID
+
+exports.getPetsitterById = async (req, res) => {
+    try {
+        const petsitter = await Petsitter.findById(req.params.id);
+        if (!petsitter) return res.status(404).json({ message: 'Petsitter não encontrado' });
+        res.status(200).json(petsitter);
+    } catch (error) {
+        res.status(400).json({ message: 'Erro ao obter Petsitter', error });
+    }
+};
+
+//Atualizar um cadastro de Petsitter
+
+exports.updatePetsitter = async (req, res) => {
+    try {
+        const petsitter = await Petsitter.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        if (!petsitter) return res.status(404).json({ message: 'Petsitter não encontrado' });
+        res.status(200).json({ message: 'Petsitter atualizado com sucesso!', petsitter });
+    } catch (error) {
+        res.status(400).json({ message: 'Erro ao atualizar Petsitter', error });
+    }
+};
+
+//Deletar um cadastro 
+
+exports.deletePetsitter = async (req, res) => {
+    try {
+        const petsitter = await Petsitter.findByIdAndDelete(req.params.id);
+        if (!petsitter) return res.status(404).json({ message: 'Petsitter não encontrado' });
+        res.status(200).json({ message: 'Petsitter deletado com sucesso!', petsitter });
+    } catch (error) {
+        res.status(400).json({ message: 'Erro ao deletar Petsitter', error });
+    }
+};
