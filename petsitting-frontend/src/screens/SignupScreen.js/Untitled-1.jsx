@@ -1,7 +1,5 @@
 
 
-//SignupScreen.js
-
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet } from 'react-native';
 
@@ -14,40 +12,38 @@ const SignupScreen = () => {
 
     const handleSignup = () => {
 
-        // Lógica para criar conta
-
         console.log({ name, email, password, petSpecies, careNeeds });
     };
 
     return (
         <View style={styles.container}>
             <TextInput 
-                placeholder="Nome"
+                placeholder "Nome"
                 value={name}
                 onChangeText={setName}
                 style={styles.input}
             />
             <TextInput 
-                placeholder="Email"
+                placeholder "Email"
                 value={email}
                 onChangeText={setEmail}
                 style={styles.input}
             />
             <TextInput 
-                placeholder="Senha"
+                placeholder "Senha"
                 value={password}
                 onChangeText={setPassword}
                 secureTextEntry
                 style={styles.input}
             />
             <TextInput 
-                placeholder="Espécie do Pet"
+                placeholder "Espécie do Pet"
                 value={petSpecies}
                 onChangeText={setPetSpecies}
                 style={styles.input}
             />
             <TextInput 
-                placeholder="Necessidade de Cuidados"
+                placeholder="Necessidade de cuidados especiais"
                 value={careNeeds}
                 onChangeText={setCareNeeds}
                 style={styles.input}
