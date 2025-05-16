@@ -1,7 +1,5 @@
 
 
-//src/screens/RatingScreen.js
-
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet } from 'react-native';
 
@@ -11,15 +9,13 @@ const RatingScreen = () => {
 
     const handleSubmit = () => {
 
-        //Lógica para envio de avaliações 
-
-        console.log({ rating, feedback });
+       console.log({ rating, feedback });
     };
 
     return (
         <View style={styles.container}>
             <TextInput 
-                placeholder="Avalie de 1 a 5"
+                placeholder "Avalie de 1 a 5"
                 value={rating}
                 onChangeText={setRating}
                 style={styles.input}
