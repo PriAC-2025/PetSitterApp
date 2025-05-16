@@ -1,5 +1,4 @@
 
-//src/screens/PetProfileScreen.js
 
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet } from 'react-native';
@@ -12,33 +11,31 @@ const PetProfileScreen = () => {
 
     const handleSubmit = () => {
         
-        //Lógica para salvar as informações dos pets
-
-        console.log({ petName, petAge, specialNeeds, medications });
+       console.log({ petName, petAge, specialNeeds, medications });
     };
 
     return (
         <View style={styles.container}>
             <TextInput 
-                placeholder="Nome do Pet"
+                placeholder "Nome do Pet"
                 value={petName}
                 onChangeText={setPetName}
                 style={styles.input}
             />
             <TextInput 
-                placeholder="Idade do Pet"
+                placeholder "Idade do Pet"
                 value={petAge}
                 onChangeText={setPetAge}
                 style={styles.input}
             />
             <TextInput 
-                placeholder="Necessidades Especiais"
+                placeholder="Necessidades e cuidados especiais"
                 value={specialNeeds}
                 onChangeText={setSpecialNeeds}
                 style={styles.input}
             />
             <TextInput 
-                placeholder="Medicamentos/Alergias"
+                placeholder "Medicamentos/Alergias"
                 value={medications}
                 onChangeText={setMedications}
                 style={styles.input}
