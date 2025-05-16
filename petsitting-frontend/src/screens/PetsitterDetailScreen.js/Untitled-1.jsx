@@ -19,8 +19,6 @@ const PetsitterDetailScreen = ({ route }) => {
 
     const handleReserve = () => {
 
-        //Lógica para reservar o petsitter
-
         console.log("Reserva feita com sucesso!");
     };
 
