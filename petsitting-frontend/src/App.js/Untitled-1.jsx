@@ -1,7 +1,5 @@
 
 
-//App.js
-
 import React from 'react';
 import { Platform } from 'react-native'; 
 import WebNavigator from './navigation/AppNavigator'; 
