@@ -4,8 +4,6 @@ export default api;
 
 const API_URL = 'http://localhost:5000/api'; 
 
-//Função para buscar a lista de Petsitters
-
 export const fetchPetSitters = async () => {
     const response = await fetch(`${API_URL}/petsitters`);
     if (!response.ok) {
@@ -14,7 +12,7 @@ export const fetchPetSitters = async () => {
     return response.json();
 };
 
-//Função para criar agendamento
+//Agendamento
 
 export const createReservation = async (reservationData) => {
     const response = await fetch(`${API_URL}/reservations`, {
@@ -32,7 +30,7 @@ export const createReservation = async (reservationData) => {
     return response.json();
 };
 
-//Função para inserir avaliação
+// Avaliação
 
 export const submitReview = async (reviewData) => {
     const response = await fetch(`${API_URL}/reviews`, {
@@ -50,7 +48,7 @@ export const submitReview = async (reviewData) => {
     return response.json();
 };
 
-//Função para preencher formulário de características do pet
+//Formulário de características do pet
 
 export const addPet = async (petData) => {
     const response = await fetch(`${API_URL}/pets`, {
@@ -68,7 +66,7 @@ export const addPet = async (petData) => {
     return response.json();
 };
 
-//Função para preencher formulário de características do petsitter
+//Formulário de características do petsitter
 
 export const addPetSitter = async (petsitterData) => {
     const response = await fetch(`${API_URL}/petsitters`, {
