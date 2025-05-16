@@ -33,7 +33,7 @@ const UserProfile = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await updateUserProfile(userId, { name, email }); //Atualização de perfil 
+            await updateUserProfile(userId, { name, email }); //para atualizar perfil 
             alert('Perfil atualizado com sucesso!');
         } catch (error) {
             setError('Erro ao atualizar perfil');
