@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { getPetsitters, createReservation } from '../../services/api'; 
-import './ReservationForm.css'; //Recurso opcional
+import './ReservationForm.css'; //opcional
 
 const ReservationForm = () => {
     const [petsitters, setPetsitters] = useState([]);
@@ -34,18 +34,18 @@ const ReservationForm = () => {
                 endDate,
             };
             await createReservation(reservationData); 
-            setSuccessMessage('Reserva criada com sucesso!');
+            setSuccessMessage('Agendamento criado com sucesso!');
             setSelectedPetsitter('');
             setStartDate('');
             setEndDate('');
         } catch (error) {
-            setError('Erro ao criar reserva');
+            setError('Erro ao criar agendamento');
         }
     };
 
     return (
         <div className="reservation-form">
-            <h2>Formulário de Reserva</h2>
+            <h2>Formulário de Agendamento</h2>
             {error && <div className="error">{error}</div>}
             {successMessage && <div className="success">{successMessage}</div>}
 
@@ -86,7 +86,7 @@ const ReservationForm = () => {
                         required
                     />
                 </div>
-                <button type="submit">Criar Reserva</button>
+                <button type="submit">Criar Agendamento</button>
             </form>
         </div>
     );
