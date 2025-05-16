@@ -1,7 +1,5 @@
 
 
-//PetsitterListScreen.js
-
 import React from 'react';
 import { View, Text, Button, StyleSheet, FlatList } from 'react-native';
 
@@ -10,7 +8,6 @@ const PetsitterListScreen = ({ navigation }) => {
         { id: '1', name: 'Felipe Costa', rating: 4.8 },
         { id: '2', name: 'Gabriela Alencar', rating: 5.0 },
 
-        // Adição de petsitters conforme necessário
     ];
 
     return (
