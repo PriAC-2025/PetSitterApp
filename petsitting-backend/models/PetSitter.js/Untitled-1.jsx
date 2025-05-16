@@ -1,7 +1,5 @@
 
 
-//models/Petsitter.js
-
 const mongoose = require('mongoose');
 
 const PetsitterSchema = new mongoose.Schema({
@@ -9,7 +7,7 @@ const PetsitterSchema = new mongoose.Schema({
     location: { type: String, required: true },
     experienceYears: { type: Number, required: true },
     ratings: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Review' }],
-    preco por hora: { type: Number, require: true },
+    preco por hora: { type: Number, required: true },
     createdAt: { type: Date, default: Date.now },
 });
 
