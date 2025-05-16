@@ -1,7 +1,5 @@
 
 
-//components/Auth/Register.js
-
 import React, { useState } from 'react';
 import api from '../../services/api';
 
@@ -15,8 +13,8 @@ const Register = () => {
       await api.post('/auth/register', { username, password });
       alert('Usuário registrado com sucesso!');
     } catch (error) {
-      console.error("Erro ao registrar: ", error);
-      alert('Erro ao registrar. Tente novamente.');
+      console.error("Erro ao cadastrar: ", error);
+      alert('Erro ao cadastrar. Tente novamente.');
     }
   };
 
