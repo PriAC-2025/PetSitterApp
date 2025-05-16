@@ -1,4 +1,4 @@
-//src/screens/LoginScreen.js
+
 
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
@@ -8,7 +8,7 @@ const LoginScreen = ({ navigation }) => {
     const [password, setPassword] = useState('');
 
     const handleLogin = () => {
-        //Lógica de autenticação
+        
         console.log("Email:", email, "Password:", password);
     };
 
