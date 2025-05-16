@@ -20,6 +20,7 @@
   "homepage": "https://github.com/PriAC-2025/PetSitterApp#readme",
   "dependencies": {
     "express": "^5.1.0",
-    "mysql2": "^3.14.1"
+    "mysql2": "^3.14.1",
+    "petsitterapp": "file:"
   }
 }

@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
     <title>Cadastro</title>
 </head>
 <body>
     <h1>Cadastro de Usuário</h1>
+    <div id="campo">
     <form id="cadastroform">
-        <input type="text" name="nome" placeholder="Nome" id="nome" required>
-        <input type="text" name="endereco" id="endereco" placeholder="Endereço" required>
-        <input type="text" name="email" placeholder="email" id="email" required>
-        <input type="password" name="senha" id="senha" placeholder="senha" required>
+        <p>Nome: <input type="text" name="nome" placeholder="Nome" id="nome" required></p><br>
+        <p>Endereço: <input type="text" name="endereco" id="endereco" placeholder="Endereço" required></p><br>
+        <p>Email: <input type="text" name="email" placeholder="email" id="email" required></p><br>
+        <p>Senha: <input type="password" name="senha" id="senha" placeholder="senha" required></p><br>
         <button type="submit">Cadastrar</button>
 
         <div id="usuarios"></div>
     </form>
-
+    </div>
     <script src="script.js"></script>
     
 </body>
