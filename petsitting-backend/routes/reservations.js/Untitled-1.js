@@ -1,9 +1,7 @@
 
 
-//routes/reservation.js
-
 const express = require('express');
-const Reservation = require('../models/Reservation'); // Certifique-se de criar um modelo de reserva
+const Reservation = require('../models/Reservation'); 
 const { authenticateToken } = require('../middleware/auth');
 const router = express.Router();
 
@@ -14,13 +12,13 @@ router.post('/', authenticateToken, async (req, res) => {
 
   try {
     await reservation.save();
-    res.status(201).send('Reserva criada');
+    res.status(201).send('Agendamento criado');
   } catch (error) {
-    res.status(400).send('Erro ao criar reserva');
+    res.status(400).send('Erro ao criar agendamento');
   }
 });
 
-//Todas as reservas do usuário
+//Todos os agendamentos do usuário
 
 router.get('/', authenticateToken, async (req, res) => {
   const reservations = await Reservation.find({ user: req.user.id });
