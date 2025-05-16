@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { getPetsitters, createReservation } from '../../services/api'; 
-import './ReservationForm.css'; //opcional
+import './ReservationForm.css'; 
 
 const ReservationForm = () => {
     const [petsitters, setPetsitters] = useState([]);
