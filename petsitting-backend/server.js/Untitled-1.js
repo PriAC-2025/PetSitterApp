@@ -36,6 +36,7 @@ const reviewsRoutes = require('./routes/reviews');
 const usersRoutes = require('./routes/users'); 
 
 //Usar rotas
+
 app.use('/api/auth', authRoutes);
 app.use('/api/pets', petsRoutes);
 app.use('/api/petsitters', petsittersRoutes);
