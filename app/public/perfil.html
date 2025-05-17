@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>PetSitter - Meu Perfil</title>
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>PetSitter</h2>
+        <nav>
+            <ul class="sidebar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="pets.html">Pets</a></li>
+                <li><a href="relatorios.html">Relatórios</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <header>
+            <h1>Meu Perfil</h1>
+        </header>
+        
+        <div class="form-container">
+            <div class="perfil-header">
+                <img src="https://via.placeholder.com/100" alt="Foto do perfil" class="foto-perfil">
+                <div class="info-perfil">
+                    <h2>João da Silva</h2>
+                    <p>joao.silva@email.com</p>
+                    <p>Membro desde: 15/03/2022</p>
+                </div>
+            </div>
+
+            <div class="secao-perfil">
+                <h3>Informações Pessoais</h3>
+                <form class="formulario">
+                    <div class="grupo-form">
+                        <label for="nome-completo">Nome Completo</label>
+                        <input type="text" id="nome-completo" value="João da Silva">
+                    </div>
+                    
+                    <div class="grupo-form">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" value="(11) 98765-4321">
+                    </div>
+                    
+                    <div class="grupo-form">
+                        <label for="endereco">Endereço</label>
+                        <input type="text" id="endereco" value="Rua das Flores, 123 - São Paulo/SP">
+                    </div>
+                </form>
+            </div>
+
+            <div class="secao-perfil">
+                <h3>Segurança</h3>
+                <form class="formulario">
+                    <div class="grupo-form">
+                        <label for="senha-atual">Senha Atual</label>
+                        <input type="password" id="senha-atual">
+                    </div>
+                    
+                    <div class="grupo-form">
+                        <label for="nova-senha">Nova Senha</label>
+                        <input type="password" id="nova-senha">
+                    </div>
+                    
+                    <div class="grupo-form">
+                        <label for="confirmar-senha">Confirmar Nova Senha</label>
+                        <input type="password" id="confirmar-senha">
+                    </div>
+                </form>
+            </div>
+
+            <div class="acoes-perfil">
+                <button class="botao-acao" style="background-color: #6c757d;">Cancelar</button>
+                <button class="botao">Salvar Alterações</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
