@@ -1,4 +1,3 @@
-
 const express = require('express');
 const cors = require('cors');
 const db = require('./dbmysql');
@@ -6,22 +5,26 @@ const db = require('./dbmysql');
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(express.static('public')); // Serve index.html, cadastro.html, etc.
+app.use(express.static(path.join(__dirname, 'public'))); // ('public'))
 
-app.get('/', (req, res) => {
-    res.send('API funcionando!');
-});
 
-app.post('/cadastro', (req, res) => {
-    const { nome, email, endereco, senha } = req.body;
-    const sql = 'INSERT INTO cadastro (nome, email, endereco, senha) VALUES (?, ?, ?, ?)';
 
-    db.query(sql, [nome, email, endereco, senha], (err, result) => {
+// rota login
+app.post('/script_login', (req, res) => {
+    const { email, senha } = req.body;
+
+    const sql = 'SELECT * FROM cadastro WHERE email = ? AND senha = ?';
+    db.query(sql, [email, senha], (err, results) => {
         if (err) {
-            console.error('Erro ao inserir:', err);
-            return res.status(500).json({ erro: 'Erro ao inserir no banco' });
+            console.error('Erro ao consultar:', err);
+            return res.status(500).json({ erro: 'Erro interno no servidor' });
         }
-        res.json({ mensagem: 'Cadastro realizado com sucesso!' });
+
+        if (results.length > 0) {
+            return res.json({ mensagem: 'Login bem-sucedido!' });
+        } else {
+            return res.status(401).json({ erro: 'Email ou senha incorretos' });
+        }
     });
 });
 
