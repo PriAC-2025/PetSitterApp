@@ -36,7 +36,11 @@ async function cadastro(req, res) {
         return res.status(201).json({
             sucesso: true,
             mensagem: 'Usuário cadastrado com sucesso',
-            userId: result.insertId
+            user: {
+                id: result.insertId,
+                nome_completo: nome,
+                email
+            }
         });
 
     } catch (error) {
@@ -57,6 +61,7 @@ async function cadastro(req, res) {
         });
     }
 }
+
 
 async function login(req, res) {
     res.setHeader('Content-Type', 'application/json');
@@ -85,7 +90,6 @@ async function login(req, res) {
             });
         }
 
-        // Comparação direta de senha em texto puro
         const senhaCorreta = senha === usuario.senha;
 
         if (!senhaCorreta) {
@@ -98,7 +102,11 @@ async function login(req, res) {
         return res.status(200).json({
             sucesso: true,
             mensagem: 'Login realizado com sucesso',
-            usuarioId: usuario.id
+            user: {
+                id: usuario.id,
+                nome_completo: usuario.nome_completo,
+                email: usuario.email
+            }
         });
 
     } catch (error) {
@@ -109,6 +117,7 @@ async function login(req, res) {
         });
     }
 }
+
 
 module.exports = {
     cadastro,

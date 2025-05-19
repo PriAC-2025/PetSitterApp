@@ -8,20 +8,19 @@ exports.cadastrarPet = async (req, res) => {
             raca,
             porte,
             idade,
-            cadastrado,
+            castrado, // corrigido de "cadastrado" para "castrado"
             medicamentos,
             observacoes,
             usuarioId
         } = req.body;
 
-        // Validação mínima
+        // Validação mínima: apenas nome, tipo, porte e usuarioId são obrigatórios
         if (!nome || !tipo || !porte || !usuarioId) {
             return res.status(400).json({ erro: 'Campos obrigatórios não preenchidos.' });
         }
 
-        // Monta query (exemplo genérico para MySQL)
         const sql = `
-            INSERT INTO pets (nome, tipo, raca, porte, idade, cadastrado, medicamentos, observacoes, usuarioId)
+            INSERT INTO pets (nome, tipo, raca, porte, idade, castrado, medicamentos, observacoes, usuarioId)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         `;
 
@@ -30,8 +29,8 @@ exports.cadastrarPet = async (req, res) => {
             tipo,
             raca || null,
             porte,
-            idade || null,
-            cadastrado || 'nao',
+            idade ?? null, // usa null se não for informado ou se for zero
+            castrado ?? null, // aceita 0, 1 ou null
             medicamentos || null,
             observacoes || null,
             usuarioId
@@ -50,4 +49,6 @@ exports.cadastrarPet = async (req, res) => {
         console.error('Erro geral no controller:', erro);
         return res.status(500).json({ erro: 'Erro interno no servidor.' });
     }
+
 };
+

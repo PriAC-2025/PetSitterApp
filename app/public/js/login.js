@@ -1,27 +1,48 @@
-document.getElementById('loginForm').addEventListener('submit', async (e) => {
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('loginForm');
+  if (!form) {
+    console.error('Formulário de login não encontrado!');
+    return;
+  }
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+
     const credenciais = {
-        email: document.getElementById('email').value,
-        senha: document.getElementById('senha').value
+      email: document.getElementById('email').value.trim(),
+      senha: document.getElementById('senha').value.trim()
     };
 
     try {
-        const response = await fetch('http://localhost:3300/api/auth/login', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(credenciais)
-        });
+      const response = await fetch('http://localhost:3300/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(credenciais)
+      });
 
-        const data = await response.json();
+      const data = await response.json();
 
-            if (response.ok) {
-                localStorage.setItem('usuario', JSON.stringify(data.user)); // Armazena dados do usuário
-                window.location.href = 'home.html';
-        } else {
-            alert(data.erro || 'Credenciais inválidas');
-        }
+      if (!data.usuario && !data.user && !data.usuarioId && !data.userId) {
+        alert('Dados do usuário inválidos na resposta do servidor.');
+        return;
+      }
+
+      // Ajuste para aceitar diferentes estruturas de resposta
+      const usuario = data.user || data.usuario || { id: data.usuarioId || data.userId };
+      if (!usuario.id) {
+        alert('ID do usuário não encontrado na resposta.');
+        return;
+      }
+
+      localStorage.setItem('sessaoUsuario', JSON.stringify({
+        usuario,
+        timestamp: Date.now()
+      }));
+
+      window.location.href = 'home.html';
     } catch (error) {
-        alert('Erro ao conectar com o servidor');
+      alert('Erro ao conectar com o servidor');
+      console.error(error);
     }
+  });
 });

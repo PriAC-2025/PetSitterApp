@@ -1,43 +1,45 @@
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
     iniciarControleSessao();
-    const form = document.querySelector('.formulario');
 
-    
+    const usuario = obterUsuario();
+    console.log('Usuário obtido da sessão:', usuario);
+
+    if (!usuario || !usuario.id) {
+        alert('Você precisa estar logado para acessar esta página.');
+        window.location.href = 'login.html';
+        return;
+    }
+
+    const form = document.querySelector('.formulario');
+    if (!form) {
+        console.error('Formulário não encontrado.');
+        return;
+    }
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const usuario = obterUsuario();
-        window.iniciarControleSessao();
-
-        if (!usuario || !usuario.id) {
-            alert('Você precisa estar logado para cadastrar um pet.');
-            window.location.href = 'login.html';
-            return;
-        }
+        renovarSessao();
 
         const pet = {
             nome: document.getElementById('nome-pet').value.trim(),
             tipo: document.getElementById('tipo-pet').value,
             raca: document.getElementById('raca').value.trim(),
             porte: document.getElementById('porte').value,
-            idade: parseInt(document.getElementById('idade').value),
-            cadastrado: document.getElementById('cadastrado').value,
+            idade: parseInt(document.getElementById('idade').value) || null,
+            castrado: document.getElementById('castrado').checked ? 1 : 0,  // Corrigido aqui
             medicamentos: document.getElementById('medicamentos').value.trim(),
             observacoes: document.getElementById('observacoes').value.trim(),
             usuarioId: usuario.id
         };
 
-        if (!pet.nome || !pet.tipo || !pet.porte || !pet.cadastrado) {
-            alert('Por favor, preencha todos os campos obrigatórios.');
+        if (!pet.nome || !pet.tipo || !pet.porte) {
+            alert('Por favor, preencha os campos obrigatórios: Nome, Tipo e Porte.');
             return;
         }
 
         try {
-            const response = await fetch('http://localhost:3300/api/auth/cadastrarPet', {
+            const response = await fetch('http://localhost:3300/api/pets/cadastrarPet', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -46,7 +48,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify(pet),
             });
 
-            const data = await response.json();
+            let data;
+try {
+    data = await response.json();
+} catch (e) {
+    console.error('Erro ao parsear JSON:', e);
+    data = { erro: 'Resposta inválida do servidor.' };
+}
+
 
             if (response.ok) {
                 alert('Pet cadastrado com sucesso!');
@@ -58,6 +67,5 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Erro ao conectar com o servidor.');
             console.error(error);
         }
-        
     });
 });
