@@ -18,7 +18,7 @@ O presente projeto tem como objetivo desenvolver um aplicativo de serviços de b
 
 - Back-end: Escolhemos a tecnologia Node.js com Express.js
 - Front-end: Optamos pela biblioteca do JavaScript - React.js
-- Banco de Dados: para o DataBase, selecionamos o MySQK
+- Banco de Dados: para o DataBase, selecionamos o MySQL
 
 ## Definição da prova de conceito
 
