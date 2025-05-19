@@ -1,0 +1,26 @@
+{
+  "name": "petsitterapp",
+  "version": "1.0.0",
+  "main": "teste-conexao.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PriAC-2025/PetSitterApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PriAC-2025/PetSitterApp/issues"
+  },
+  "homepage": "https://github.com/PriAC-2025/PetSitterApp#readme",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1"
+  }
+}

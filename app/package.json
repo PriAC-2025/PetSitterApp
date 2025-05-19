@@ -2,7 +2,7 @@
   "name": "petsitterapp",
   "version": "1.0.0",
   "description": "Projeto Integrador - 2a. etapa do 1o. semestre de 2025 - SENAC",
-  "main": "script.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -21,8 +21,6 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "mysql": "^2.18.1",
-    "mysql2": "^3.14.1",
-    "petsitterapp": "file:"
+    "mysql2": "^3.14.1"
   }
 }
