@@ -5,7 +5,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Força usar porta 3300, independentemente de variável ambiente
+
 const PORT = 3300;
 
 const authRoutes = require('./app/src/routes/authRoutes');
