@@ -23,10 +23,11 @@ O presente projeto tem como objetivo desenvolver um sistema web para serviços d
 ## Definição da prova de conceito
 
 Entendendo prova de conceito como a apresentação de uma versão básica do sistema web, a seguir mostraremos uma versão que permitirá ao usuário:
-1)	Criar seu perfil, com seus dados pessoais; 
-2)	Logar-se e inserir senha de acesso; 
+1)	Criar seu cadastro, com seus dados pessoais; 
+2)	Logar-se com inserção de senha de acesso; 
 3)	Cadastrar seu(s) pet(s); 
-4)	Agendamentos.
+4)	Fazer agendamento de serviços e
+5)	Listar os agendamentos de serviços.
 
 O sistema deve permitir que o usuário comece e termine esse processo de forma simples, intuitiva, rápida e eficiente.
 
