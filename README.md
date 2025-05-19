@@ -37,7 +37,8 @@ O vídeo com a demonstração do projeto encontra-se em: [[Clique aqui](https://
 
 ## Material teórico em pdf disponível em: 
 
-[📄 PetSitterApp - Documento.pdf](https://github.com/PriAC-2025/PetSitterApp/blob/main/documento.pdf)
+
+
 
 
 
