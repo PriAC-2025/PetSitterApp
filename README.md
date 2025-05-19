@@ -7,7 +7,6 @@ Projeto Integrador - 2a. etapa do 1o. semestre de 2025 - SENAC
  - EDUARDO JONSON BARTIKOSKI
  - PRISCILA ALBUQUERQUE CARDOSO
  - RAFAEL RODRIGUES DOS SANTOS
- - RAPHAELY SILVA CARNEIRO
 
 ## Visão Geral do Produto
 
