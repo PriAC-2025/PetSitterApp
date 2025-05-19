@@ -18,4 +18,14 @@ O presente projeto tem como objetivo desenvolver um aplicativo de serviços de b
 
 - Back-end: Escolhemos a tecnologia Node.js com Express.js
 - Front-end: Optamos pela biblioteca do JavaScript - React.js
-- Banco de Dados: para o DataBase, selecionamos o MongoDB
+- Banco de Dados: para o DataBase, selecionamos o MySQK
+
+## Definição da prova de conceito
+
+Entendendo prova de conceito como a apresentação de uma versão básica do sistema web, a seguir mostraremos uma versão que permitirá ao usuário:
+1)	Criar seu perfil, com seus dados pessoais; 
+2)	Logar-se e inserir senha de acesso; 
+3)	Cadastrar seu(s) pet(s); 
+4)	Agendamentos.
+ O sistema deve permitir o usuário comece e termine esse processo de forma simples, intuitiva, rápida e eficiente.
+
