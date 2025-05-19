@@ -11,7 +11,7 @@ Projeto Integrador - 2a. etapa do 1o. semestre de 2025 - SENAC
 
 ## Visão Geral do Produto
 
-O presente projeto tem como objetivo desenvolver um aplicativo de serviços de babá de animais de estimação (pet sitter), que conecta tutores de animais a profissionais de cuidados para pets. Com o aumento da demanda por serviços de cuidado animal em períodos de ausência dos tutores, este aplicativo se propõe a oferecer uma plataforma prática e segura, facilitando a busca e seleção de serviços de pet sitting qualificados.
+O presente projeto tem como objetivo desenvolver um sistema web para serviços de babá de animais de estimação (pet-sitting), que conecta seus tutores a profissionais de cuidados para pets. Com o aumento da demanda por serviços de cuidado animal em períodos de ausência dos tutores, este aplicativo se propõe a oferecer uma plataforma prática e segura, facilitando a busca e seleção de serviços de pet-sitting qualificados.
 
 ## Pré-requisitos
 ### Tecnologias utilizadas:
