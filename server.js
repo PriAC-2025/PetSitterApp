@@ -13,7 +13,15 @@ app.use('/api/auth', authRoutes);
 
 
 const petsRoutes = require('./app/src/routes/petsRoutes');
-app.use('/api/pets', petsRoutes); //
+app.use('/api/pets', petsRoutes);
+
+const agendamentoRoutes = require('./app/src/routes/agendamentoRoutes');
+app.use('/api/agendamentos', agendamentoRoutes);
+
+const relatoriosRoutes = require('./app/src/routes/relatoriosRoutes');
+app.use('/api/relatorios', relatoriosRoutes);
+
+
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);

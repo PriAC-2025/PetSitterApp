@@ -14,8 +14,10 @@
             <ul class="sidebar-nav">
                 <li><a href="home.html">Home</a></li>
                 <li><a href="perfil.html">Meu Perfil</a></li>
-                <li><a href="pets.html">Pets</a></li>
+                <li><a href="pets.html" aria-current="page">Pets</a></li>
+                <li><a href="cadastro-pet.html">Cadastro de Pet</a></li>
                 <li><a href="relatorios.html">Relatórios</a></li>
+                <li><a href="agendamento.html">Agendamento</a></li>
             </ul>
         </nav>
     </aside>
@@ -86,10 +88,14 @@
                     <button type="submit" class="botao">Cadastrar Pet</button>
                 </div>
             </form>
+
+            <!-- Lista de Pets -->
+            <div id="lista-pets" style="margin-top: 3rem;"></div>
         </div>
     </main>
 
     <script src="../js/sessao.js"></script>
     <script src="../js/cadastro-pet.js"></script>
+    <script src="../js/listar-pets.js"></script>
 </body>
 </html>

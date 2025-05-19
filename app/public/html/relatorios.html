@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/estilos.css" >
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/estilos.css" />
     <title>PetSitter - Relatórios</title>
 </head>
 <body>
@@ -13,9 +13,11 @@
         <nav>
             <ul class="sidebar-nav">
                 <li><a href="home.html">Home</a></li>
-                <li><a href="perfil.html">Perfil</a></li>
-                <li><a href="pets.html">Pets</a></li>
+                <li><a href="perfil.html">Meu Perfil</a></li>
+                <li><a href="pets.html" aria-current="page">Pets</a></li>
+                <li><a href="cadastro-pet.html">Cadastro de Pet</a></li>
                 <li><a href="relatorios.html">Relatórios</a></li>
+                <li><a href="agendamento.html">Agendamento</a></li>
             </ul>
         </nav>
     </aside>
@@ -27,16 +29,17 @@
         </header>
         
         <div class="form-container">
-            <form class="formulario">
+            <form id="filtroRelatorio" class="formulario">
                 <h2 style="text-align: center; margin-bottom: 1.5rem;">Filtrar Relatórios</h2>
                 
                 <div class="grupo-form">
-                    <label for="periodo">Período</label>
-                    <select id="periodo" name="periodo">
-                        <option value="7">Últimos 7 dias</option>
-                        <option value="30">Últimos 30 dias</option>
-                        <option value="custom">Personalizado</option>
-                    </select>
+                    <label for="dataInicio">Data Início</label>
+                    <input type="date" id="dataInicio" name="dataInicio" required />
+                </div>
+
+                <div class="grupo-form">
+                    <label for="dataFim">Data Fim</label>
+                    <input type="date" id="dataFim" name="dataFim" required />
                 </div>
                 
                 <div style="text-align: center; margin-top: 2rem;">
@@ -46,32 +49,22 @@
             
             <div style="margin-top: 3rem;">
                 <h2 style="text-align: center; margin-bottom: 1.5rem;">Últimos Serviços</h2>
-                <table class="tabela-relatorios">
+                <table class="tabela-relatorios" id="tabelaRelatorios">
                     <thead>
                         <tr>
                             <th>Data</th>
                             <th>Pet</th>
+                            <th>Tutor</th>
                             <th>Serviço</th>
-                            <th>Cuidador</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>15/05/2023</td>
-                            <td>Rex</td>
-                            <td>Passeio</td>
-                            <td>Ana Silva</td>
-                        </tr>
-                        <tr>
-                            <td>10/05/2023</td>
-                            <td>Luna</td>
-                            <td>Visita</td>
-                            <td>Carlos Oliveira</td>
-                        </tr>
+                        <!-- Conteúdo será inserido pelo relatorios.js -->
                     </tbody>
                 </table>
             </div>
         </div>
     </main>
+    <script src="../js/relatorio.js"></script>
 </body>
 </html>

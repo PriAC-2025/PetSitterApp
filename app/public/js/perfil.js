@@ -1,12 +1,7 @@
-// perfil.js
-
-// Importante: ajustar o caminho de sessao.js se necessário ou incluir o código abaixo na sessão.js
-
 import { iniciarControleSessao, obterUsuario } from './sessao.js';
 
 iniciarControleSessao();
 
-// Agora pode usar obterUsuario() para pegar dados do usuário logado
 const usuario = obterUsuario();
 
 
@@ -40,12 +35,10 @@ function encerrarSessao() {
     window.location.href = 'login.html';
 }
 
-// Preenche os campos do perfil com os dados do usuário logado
 function carregarDadosPerfil() {
     const usuario = verificarAutenticacao();
     if (!usuario) return;
 
-    // Atualiza dados na seção de perfil (header)
     document.querySelector('.info-perfil h2').textContent = usuario.nome || 'Usuário';
     document.querySelector('.info-perfil p:nth-child(2)').textContent = usuario.email || '';
     document.querySelector('.info-perfil p:nth-child(3)').textContent = 'Membro desde: ' + (usuario.dataCadastro || '');
@@ -55,13 +48,12 @@ function carregarDadosPerfil() {
     document.getElementById('telefone').value = usuario.telefone || '';
     document.getElementById('endereco').value = usuario.endereco || '';
 
-    // Se tiver foto, atualiza imagem, senão mantém placeholder
+
     if (usuario.fotoUrl) {
         document.querySelector('.foto-perfil').src = usuario.fotoUrl;
     }
 }
 
-// Salva alterações no perfil (exemplo simples, você deve adaptar para enviar ao backend)
 async function salvarAlteracoes() {
     const usuario = verificarAutenticacao();
     if (!usuario) return;
@@ -87,7 +79,6 @@ async function salvarAlteracoes() {
         }
     }
 
-    // Monta payload para backend (ajuste conforme sua API)
     const payload = {
         nome,
         telefone,
