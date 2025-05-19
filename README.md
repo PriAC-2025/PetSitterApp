@@ -27,5 +27,6 @@ Entendendo prova de conceito como a apresentação de uma versão básica do sis
 2)	Logar-se e inserir senha de acesso; 
 3)	Cadastrar seu(s) pet(s); 
 4)	Agendamentos.
- O sistema deve permitir o usuário comece e termine esse processo de forma simples, intuitiva, rápida e eficiente.
+
+- O sistema deve permitir o usuário comece e termine esse processo de forma simples, intuitiva, rápida e eficiente.
 
