@@ -34,5 +34,5 @@ O sistema deve permitir que o usuário comece e termine esse processo de forma s
 
 O vídeo com a demonstração do projeto encontra-se em: [[Clique aqui](https://www.youtube.com/watch?v=5eZ4EhFStCA)]
 
-## Material teórico em pdf disponível em: 
+
 
